@@ -76,10 +76,6 @@
   color: #c8d8e4;
 }
 
-#picture {
-  margin-bottom: 10px;
-}
-
 .Slider {
   font-family: sans-serif;
   display: flex;
@@ -91,8 +87,25 @@
   transform: scale(1.03, 1.03);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Mobile Devices ----------- */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .Logo {
+    min-height: 35vmin;
+    pointer-events: none;
+  }
+  #box-container {
+    display: grid;
+    grid-template: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    justify-items: center;
+  }
+  #box-button {
+    width: 15rem;
+    height: 15rem;
+    font-size: 1rem;
+  }
+
+  #box-button > p {
+    font-size: 27px;
   }
 }
