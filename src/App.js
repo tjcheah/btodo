@@ -1,21 +1,21 @@
-import logo from "./logo.svg";
+import Recommendation from "./Recommendation";
+import Categories from "./Categories";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Testing 1 2 3</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p className="Title"> BTodo App </p>
+      <div className="Weather-col">
+        <div>Hey There, Let's discover</div>
+        <div className="Weather">Weather</div>
+      </div>
+      <div className="Categories">
+        <Categories />
+      </div>
+      <div className="Recommendation">
+        <Recommendation />
+      </div>
     </div>
   );
 }
