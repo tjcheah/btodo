@@ -14,9 +14,6 @@ const Codes = {
   Sabah: "MY-12",
   Sarawak: "MY-13",
   Wilayah_Persekutuan: "MY-14",
-  // Wilayah_Persekutuan_Kuala_Lumpur: "MY-14",
-  // Wilayah_Persekutuan_Labuan: "MY-15",
-  // Wilayah_Persekutuan_Putrajaya: "MY-16",
 };
 
 export default Codes;
