@@ -3,6 +3,7 @@ import Sport from "./Sport";
 import Recommendation from "./Recommendation";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
+import Weather from "./component/weather.js";
 
 function App() {
   return (
@@ -16,7 +17,6 @@ function App() {
           <Route path="/sport" component={Sport} />
         </Switch>
       </div>
-    </Router>
   );
 }
 
@@ -24,7 +24,7 @@ const Home = () => (
   <div>
     <div className="Weather-col">
       <div>Hey There, Let's discover</div>
-      <div className="Weather">Weather</div>
+      <div className="Weather">      <Weather /></div>
     </div>
     <div className="Categories">
       <Categories />
