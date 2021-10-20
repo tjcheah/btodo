@@ -54,19 +54,22 @@
 }
 
 #box-container {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
+  justify-content:space-evenly;
+  width: 100%;
+  height:fit-content;
 }
 
 #box-button {
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   height: 20rem;
   width: 20rem;
+  margin: 8px;
   box-shadow: 0 2px 10px 1px #2b6777;
   border-radius: 0.5rem;
   background-color: #2b6777;
-  margin-left: 30px;
   transition-property: transform;
   transition-duration: 0.5s;
 }
