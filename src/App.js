@@ -1,9 +1,15 @@
-import Categories from "./Categories";
-import Sport from "./Sport";
-import Recommendation from "./Recommendation";
+
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
 import Weather from "./component/weather.js";
+import Categories from "./Categories";
+import Recommendation from "./Recommendation";
+import Recreation from "./Recommendation/Recreation";
+import Education from "./Recommendation/Education";
+import Cooking from "./Recommendation/Cooking";
+import Charity from "./Recommendation/Charity";
+import Sport from "./Recommendation/Sport";
+import Social from "./Recommendation/Social";
 
 function App() {
   return (
@@ -14,9 +20,15 @@ function App() {
         </Link>
         <Switch>
           <Route path="/" exact component={Home} />
+          <Route path="/recreation" component={Recreation} />
+          <Route path="/education" component={Education} />
+          <Route path="/cooking" component={Cooking} />
+          <Route path="/charity" component={Charity} />
           <Route path="/sport" component={Sport} />
+          <Route path="/social" component={Social} />
         </Switch>
       </div>
+    </Router>
   );
 }
 
