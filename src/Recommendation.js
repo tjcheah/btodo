@@ -1,18 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import logo from "./logo.svg";
 import data_array from "./obj.js";
 import Shuffle from "./Shuffle.js";
 import "./App.css";
 export default function Recommendation() {
-  const [ActivityDet, setADetails] = useState("");
-
-  // fetch api //
-  useEffect(() => {
-    fetch("https://www.boredapi.com/api/activity")
-      .then((response) => response.json())
-      .then((data) => setADetails(data));
-  }, []);
-
   //fetch recommended activitiesy//
   var filter = data_array.filter(
     (data) =>
