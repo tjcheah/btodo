@@ -6,6 +6,8 @@ const Weather = () => {
   const [cities, setCities] = useState([]);
   const [selectedState, setSelectedState] = useState("");
   const [selectedCity, setSelectedCity] = useState("");
+  const [result, setResult] = useState({});
+  const [data, selectData] = useState([]);
 
   const handleStateChange = (e) => {
     setCities(state[e.target.value]);
@@ -24,7 +26,9 @@ const Weather = () => {
       try {
         const response = await fetch(url);
         const data = await response.json();
-        console.log(data);
+        setResult(data);
+        selectData(data.weather);
+        console.log(data.weather);
       } catch (error) {
         console.log("error", error);
       }
@@ -58,6 +62,19 @@ const Weather = () => {
           );
         })}
       </select>
+      <div>{result?.main?.temp}</div>
+      {/* <div>{data?.map((item) => item)}</div> */}
+      <div>
+        {data?.map((d) => (
+          <p>
+            {d.main}:{d.description}:
+            <img
+              src={`http://openweathermap.org/img/wn/${d.icon}@4x.png`}
+              alt={`${d.description} icon`}
+            />
+          </p>
+        ))}
+      </div>
     </div>
   );
 };
