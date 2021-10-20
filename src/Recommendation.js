@@ -1,49 +1,42 @@
-import React from "react";
-import Carousel from "react-elastic-carousel";
-import Images from "./images/Image";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import logo from "./logo.svg";
 import "./App.css";
 
-const breakPoints = [
-  { width: 1, itemsToShow: 1 },
-  { width: 550, itemsToShow: 2 },
-  { width: 768, itemsToShow: 3 },
-  { width: 1200, itemsToShow: 4 },
-];
+export default function Recommendation() {
+  const [ActivityDet, setADetails] = useState("");
+  const [Activity, setActivity] = useState("");
+  const [Type, setType] = useState("");
+  const [Participant, setParticipant] = useState("");
 
-function Recommendation() {
+  // fetch api //
+  useEffect(() => {
+    fetch("https://www.boredapi.com/api/activity")
+      .then((response) => response.json())
+      .then((data) => setADetails(data));
+  }, []);
+
   return (
-    <>
-      <h1 style={{ textAlign: "center" }}>Recommendations</h1>
-      <div className="Slider">
-        <Carousel breakPoints={breakPoints}>
-          <button class="scale" id="box-button">
-            <img src={Images.recreation} className="Logo" alt="" />
-            <p>Recreational</p>
-          </button>
-          <button class="scale" id="box-button">
-            <img src={Images.education} className="Logo" alt="" />
-            <p>Education</p>
-          </button>
-          <button class="scale" id="box-button">
-            <img src={Images.cooking} className="Logo" alt="" />
-            <p>Cooking</p>
-          </button>
-          <button class="scale" id="box-button">
-            <img src={Images.charity} className="Logo" alt="" />
-            <p>Charity</p>
-          </button>
-          <button class="scale" id="box-button">
-            <img src={Images.sport} className="Logo" alt="" />
-            <p>Sport</p>
-          </button>
-          <button class="scale" id="box-button">
-            <img src={Images.social} className="Logo" alt="" />
-            <p>Social</p>
-          </button>
-        </Carousel>
+    <div id="bored-container">
+      <h1>Bored?</h1>
+      <div id="box-container">
+        <button class="scale" id="box-button">
+          <img src={logo} className="Logo" alt="logo" />
+          <p>Type: {ActivityDet.type}</p>
+        </button>
+        <button class="scale" id="box-button">
+          <img src={logo} className="Logo" alt="logo" />
+          <p>Type: {ActivityDet.type}</p>
+        </button>
+        <button class="scale" id="box-button">
+          <img src={logo} className="Logo" alt="logo" />
+          <p>Type: {ActivityDet.type}</p>
+        </button>
+        <button class="scale" id="box-button">
+          <img src={logo} className="Logo" alt="logo" />
+          <p>Type: {ActivityDet.type}</p>
+        </button>
       </div>
-    </>
+    </div>
   );
 }
-
-export default Recommendation;
