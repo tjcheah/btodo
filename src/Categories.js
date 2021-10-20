@@ -1,10 +1,8 @@
 import React from "react";
 import Carousel from "react-elastic-carousel";
 import {
-  BrowserRouter as Router,
-  Switch,
+  BrowserRouter as 
   Route,
-  Link,
   BrowserRouter,
 } from "react-router-dom";
 import Images from "./Images/Image";
