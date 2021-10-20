@@ -1,6 +1,7 @@
 import Recommendation from "./Recommendation";
 import Categories from "./Categories";
 import "./App.css";
+import Recreational from "./Recreational";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       </div>
       <div className="Recommendation">
         <Recommendation />
+        <Recreational />
       </div>
     </div>
   );
