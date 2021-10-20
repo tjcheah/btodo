@@ -6,6 +6,8 @@ const Weather = () => {
   const [cities, setCities] = useState([]);
   const [selectedState, setSelectedState] = useState("");
   const [selectedCity, setSelectedCity] = useState("");
+  const [result, setResult] = useState({});
+  const [data, selectData] = useState([]);
 
   const handleStateChange = (e) => {
     setCities(state[e.target.value]);
@@ -20,23 +22,42 @@ const Weather = () => {
   useEffect(() => {
     console.log(selectedState);
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${selectedCity},${selectedState}&appid=a497affed95ab5458861828d628571ee&units=metric`;
+
     const fetchData = async () => {
       try {
         const response = await fetch(url);
         const data = await response.json();
-        console.log(data);
+        setResult(data);
+        selectData(data.weather);
+        console.log(data.weather);
       } catch (error) {
         console.log("error", error);
       }
     };
 
-    fetchData();
+    if (selectedState !== "" || selectedCity !== "") {
+      fetchData();
+    }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedCity]);
 
   return (
     <div className="Container">
-      <label for="state">Choose a state:</label>
+      <div>{result?.main?.temp}</div>
+      <div>
+        {data?.map((d) => (
+          <p key={d.description}>
+            {d.main}:{d.description}:
+            <img
+              src={`http://openweathermap.org/img/wn/${d.icon}@4x.png`}
+              alt={`${d.description} icon`}
+            />
+          </p>
+        ))}
+      </div>
+
+      <label htmlFor="state">Choose a state:</label>
       <select name="states" onChange={handleStateChange}>
         <option value="none">None</option>
         {Object.keys(state).map((s) => {
@@ -47,7 +68,8 @@ const Weather = () => {
           );
         })}
       </select>
-      <label for="city">Choose a city:</label>
+
+      <label htmlFor="city">Choose a city:</label>
       <select name="city" onChange={handleCityChange}>
         <option value="none">None</option>
         {cities.map((c) => {
