@@ -1,49 +1,34 @@
-import React from "react";
-import Carousel from "react-elastic-carousel";
-import Images from "./images/Image";
+import logo from "./logo.svg";
 import "./App.css";
+import data_array from "./obj.js";
+import Shuffle from "./Shuffle.js";
 
-const breakPoints = [
-  { width: 1, itemsToShow: 1 },
-  { width: 550, itemsToShow: 2 },
-  { width: 768, itemsToShow: 3 },
-  { width: 1200, itemsToShow: 4 },
-];
+export default function Recommendation() {
+  //fetch recommended activitiesy//
+  var filter = data_array.filter(
+    (data) =>
+      data.price === 0.0 && data.accessibility === "Few to no challenges"
+  );
+  //randomize recommended
+  var recommends = Shuffle(filter);
 
-function Recommendation() {
+  const mappingRecs = (
+    <div className="recommended">
+      {recommends.slice(0, 5).map((list) => {
+        return (
+          <button class="scale" id="box-button">
+            <img src={logo} className="Logo" alt="logo" />
+            <p>Type: {list.type}</p>
+          </button>
+        );
+      })}
+    </div>
+  );
+
   return (
-    <>
-      <h1 style={{ textAlign: "center" }}>Recommendations</h1>
-      <div className="Slider">
-        <Carousel breakPoints={breakPoints}>
-          <button class="scale" id="box-button">
-            <img src={Images.recreation} className="Logo" alt="" />
-            <p>Recreational</p>
-          </button>
-          <button class="scale" id="box-button">
-            <img src={Images.education} className="Logo" alt="" />
-            <p>Education</p>
-          </button>
-          <button class="scale" id="box-button">
-            <img src={Images.cooking} className="Logo" alt="" />
-            <p>Cooking</p>
-          </button>
-          <button class="scale" id="box-button">
-            <img src={Images.charity} className="Logo" alt="" />
-            <p>Charity</p>
-          </button>
-          <button class="scale" id="box-button">
-            <img src={Images.sport} className="Logo" alt="" />
-            <p>Sport</p>
-          </button>
-          <button class="scale" id="box-button">
-            <img src={Images.social} className="Logo" alt="" />
-            <p>Social</p>
-          </button>
-        </Carousel>
-      </div>
-    </>
+    <div id="bored-container">
+      <h1>Bored?</h1>
+      <div id="box-container">{mappingRecs}</div>
+    </div>
   );
 }
-
-export default Recommendation;
