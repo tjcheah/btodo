@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
-
 export default function Recommendation() {
   const [ActivityDet, setADetails] = useState("");
   const [Activity, setActivity] = useState("");
