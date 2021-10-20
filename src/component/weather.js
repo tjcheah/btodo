@@ -63,7 +63,6 @@ const Weather = () => {
         })}
       </select>
       <div>{result?.main?.temp}</div>
-      {/* <div>{data?.map((item) => item)}</div> */}
       <div>
         {data?.map((d) => (
           <p>
