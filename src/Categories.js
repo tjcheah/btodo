@@ -1,10 +1,6 @@
 import React from "react";
 import Carousel from "react-elastic-carousel";
-import {
-  BrowserRouter as 
-  Route,
-  BrowserRouter,
-} from "react-router-dom";
+import { BrowserRouter as Route, BrowserRouter } from "react-router-dom";
 import Images from "./Images/Image";
 import "./App.css";
 import { useHistory } from "react-router-dom";

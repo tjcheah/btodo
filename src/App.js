@@ -17,7 +17,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Link to="/">
+        <Link to="/" style={{ textDecoration: "none" }}>
           <p className="Title"> BTodo App </p>
         </Link>
         <Switch>
