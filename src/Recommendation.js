@@ -34,7 +34,7 @@ export default function Recommendation() {
                 </li>
                 <li>
                   <strong>No. of Participants : </strong>
-                  {list.participant}
+                  {list.participants}
                 </li>
                 <li>
                   <strong>Type: </strong>
