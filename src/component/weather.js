@@ -48,7 +48,7 @@ const Weather = () => {
       <div>
         {data?.map((d) => (
           <p key={d.description}>
-            {d.main}:{d.description}:
+            {d.main} : {d.description}
             <img
               src={`http://openweathermap.org/img/wn/${d.icon}@4x.png`}
               alt={`${d.description} icon`}

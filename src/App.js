@@ -46,7 +46,6 @@ const Home = () => (
     <div className="Weather-col">
       <div>Hey There, Let's discover</div>
       <div className="Weather">
-        {" "}
         <Weather />
       </div>
     </div>

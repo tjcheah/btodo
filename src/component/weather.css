@@ -6,10 +6,17 @@
 .Container {
   width: 100%;
   display: inline-block;
+  align-items: center;
+  justify-content: center;
 }
 
 .city {
   width: 100%;
   display: inline-flex;
   flex-direction: column;
+}
+
+.Display {
+  align-items: center;
+  justify-content: center;
 }
