@@ -8,9 +8,11 @@ function Relaxation() {
       {filtered.map((list) => {
         return (
           <div id="card" key={list.id}>
-            <p>Activity: {list.activity}</p>
-            <p>No. of participants: {list.participants}</p>
-            <p>Type: {list.type}</p>
+            <div className="card">
+              <p>Activity: {list.activity}</p>
+              <p>No. of participants: {list.participants}</p>
+              <p>Type: {list.type}</p>
+            </div>
           </div>
         );
       })}

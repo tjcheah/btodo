@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
+import "./Categories/Cat.css";
 import Weather from "./component/weather.js";
 import Categories from "./Categories";
 import Recommendation from "./Recommendation";
