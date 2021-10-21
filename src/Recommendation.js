@@ -4,7 +4,7 @@ import data_array from "./obj.js";
 import Shuffle from "./Shuffle.js";
 import "./App.css";
 export default function Recommendation() {
-  var cost = "";
+  let cost = "";
   //fetch recommended activitiesy//
   var filter = data_array.filter(
     (data) =>
