@@ -18,7 +18,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Link to="/">
+        <Link to="/" style={{ textDecoration: "none" }}>
           <p className="Title"> BTodo App </p>
         </Link>
         <Switch>
@@ -34,15 +34,12 @@ function App() {
           <Route path="/busywork" component={Busywork} />
         </Switch>
       </div>
-      <div className="Recommendation">
-        <Filter />
-      </div>
     </Router>
   );
 }
 
 const Home = () => (
-  <div>
+  <div className="Main-container">
     <div className="Weather-col">
       <div>Hey There, Let's discover</div>
       <div className="Weather">

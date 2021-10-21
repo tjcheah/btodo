@@ -15,24 +15,33 @@ export default function Recommendation() {
   const mappingRecs = (
     <div>
       {recommends.slice(0, 5).map((list) => {
+        if (list.price > 0.0) {
+          var cost = "$$";
+        } else {
+          var cost = "Free";
+        }
         return (
           <div class="scale" id="box-button">
             <img src={logo} className="Logo" alt="logo" />
             <p>{list.activity}</p>
             <div class="info">
-              <h2> Description</h2>
+              <h2>Details</h2>
               <ul>
                 <li>
-                  <strong>Height : </strong>5 Ft{" "}
+                  <strong>Activity : </strong>
+                  {list.activity}
                 </li>
                 <li>
-                  <strong>Shade : </strong>Olive green
+                  <strong>No. of Participants : </strong>
+                  {list.participant}
                 </li>
                 <li>
-                  <strong>Decoration: </strong>balls and bells
+                  <strong>Type: </strong>
+                  {list.type}
                 </li>
                 <li>
-                  <strong>Material: </strong>Eco-Friendly
+                  <strong>Cost: </strong>
+                  {cost}
                 </li>
               </ul>
             </div>

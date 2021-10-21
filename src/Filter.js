@@ -23,16 +23,16 @@ function Filter() {
     <div className="card-container">
       {filtered.map((list) => {
         if (list.price > 0.0) {
-          var harga = "$$";
+          var cost = "$$";
         } else {
-          var harga = "Free";
+          var cost = "Free";
         }
         return (
           <div className="card">
             <p>Activity: {list.activity}</p>
             <p>No. of participants: {list.participants}</p>
             <p>Type: {list.type}</p>
-            <p>Price: {harga}</p>
+            <p>Price: {cost}</p>
           </div>
         );
       })}
