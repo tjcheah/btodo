@@ -12,7 +12,6 @@ import Social from "./Recommendation/Social";
 import Relaxation from "./Recommendation/Relaxation";
 import Music from "./Recommendation/Music";
 import Busywork from "./Recommendation/Busywork";
-import Filter from "./Filter";
 
 function App() {
   return (
