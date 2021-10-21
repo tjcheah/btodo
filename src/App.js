@@ -3,15 +3,15 @@ import "./App.css";
 import Weather from "./component/weather.js";
 import Categories from "./Categories";
 import Recommendation from "./Recommendation";
-import Recreation from "./Categories/Recreational";
-import Education from "./Categories/Education";
-import Cooking from "./Categories/Cooking";
-import Charity from "./Categories/Charity";
-import Diy from "./Categories/Diy";
-import Social from "./Categories/Social";
-import Relaxation from "./Categories/Relaxation";
-import Music from "./Categories/Music";
-import Busywork from "./Categories/Busywork";
+import Recreation from "./Recommendation/Recreational";
+import Education from "./Recommendation/Education";
+import Cooking from "./Recommendation/Cooking";
+import Charity from "./Recommendation/Charity";
+import Diy from "./Recommendation/Diy";
+import Social from "./Recommendation/Social";
+import Relaxation from "./Recommendation/Relaxation";
+import Music from "./Recommendation/Music";
+import Busywork from "./Recommendation/Busywork";
 
 function App() {
   return (
@@ -38,7 +38,7 @@ function App() {
 }
 
 const Home = () => (
-  <div>
+  <div className="Main-container">
     <div className="Weather-col">
       <div>Hey There, Let's discover</div>
       <div className="Weather">

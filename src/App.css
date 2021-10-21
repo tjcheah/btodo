@@ -1,5 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@1,700&display=swap");
+
 .App {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(45deg, #f06966, #fad6a6);
+}
+
+.Main-container {
+  background-color: white;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid rgb(197, 197, 197);
+  border-radius: 0.5rem;
 }
 
 .Logo {
@@ -8,32 +26,38 @@
 }
 
 .Title {
+  font-family: "Playfair Display SC", serif;
   font-size: 50px;
   font-weight: 900;
-  color: #52ab98;
+  color: black;
+  max-width: 30rem;
+  animation: showup 7s;
+  animation-iteration-count: 1;
 }
 
-p {
-  font-size: 20px;
+@keyframes showup {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
-
-h2 {
-  font-size: 30px;
-}
-
-h3 {
-  font-size: 30px;
-}
-
 .Weather-col {
-  background-color: #282c34;
-  color: #39395f;
+  color: black;
   display: inline-flex;
   align-items: center;
   width: calc(100% - 20px);
   padding: 0 10px;
   height: 40vh;
-  background-color: #e1eedd;
+  background-color: white;
+  border-radius: 0.4rem;
 }
 
 .App-link {
@@ -55,13 +79,14 @@ h3 {
 }
 
 .Categories {
-  background-color: #c8d8e4;
+  background-color: #ffffff;
   min-height: fit-content;
   padding: 5px 0 30px;
+  width: 100%;
 }
 
 .Recommendation {
-  background-color: #e1eedd;
+  background-color: #ffffff;
   min-height: fit-content;
   padding: 5px 0 30px;
 }
@@ -80,16 +105,17 @@ h3 {
   height: 21rem;
   width: 21rem;
   margin: 8px;
-  box-shadow: 0 2px 10px 1px #2b6777;
+  box-shadow: 0 2px 10px 1px #f06966;
   border-radius: 0.5rem;
-  background-color: #2b6777;
+  border: transparent;
+  background: linear-gradient(45deg, #f06966, #ffcac9);
   transition-property: transform;
   transition-duration: 0.5s;
 }
 
 #box-button > p {
   font-size: 30px;
-  color: #c8d8e4;
+  color: #ffffff;
 }
 
 .Slider {
@@ -97,6 +123,7 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: calc(100%-20px);
 }
 
 .scale {
@@ -110,8 +137,7 @@ h3 {
 }
 
 .info {
-  background: rgba(27, 26, 26, 0.9);
-  font-family: "Bree Serif", serif;
+  background: rgba(138, 43, 43, 0.9);
   transition: all 0.3s ease-out;
   transform: translateX(-100%);
   position: absolute;
@@ -168,6 +194,43 @@ h3 {
   #box-button > p {
     font-size: 27px;
   }
+}
+/* Dropdown */
+.dropbtn {
+  background-color: #04aa6d;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropmenu {
+  display: none;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Link inside dropdown */
+.dropmenu li {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropmenu li:hover {
+  background-color: rgb(151, 151, 151);
+  color: white;
+}
+
+.dropdown:hover .dropmenu {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #036e47;
 }
 
 /* category page  */

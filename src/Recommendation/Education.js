@@ -1,7 +1,7 @@
 import data_array from "../obj.js";
 
-function Diy() {
-  var filtered = data_array.filter((data) => data.type === "diy");
+function Education() {
+  var filtered = data_array.filter((data) => data.type === "education");
 
   const mappingFil = (
     <div className="category">
@@ -20,11 +20,10 @@ function Diy() {
   return (
     <div className="App">
       <div id="bored-container">
-        <h2>Category: DIY</h2>
+        <h2>Category: Education</h2>
         {mappingFil}
       </div>
     </div>
   );
 }
-
-export default Diy;
+export default Education;
