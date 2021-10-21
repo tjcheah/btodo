@@ -15,11 +15,16 @@ export default function Recommendation() {
   const mappingRecs = (
     <div className="recommended">
       {recommends.slice(0, 5).map((list) => {
+        if (list.price > 0.0) {
+          var harga = "$$";
+        } else {
+          var harga = "Free";
+        }
         return (
-          <button class="scale" id="box-button">
+          <div class="scale" id="box-button">
             <img src={logo} className="Logo" alt="logo" />
-            <p>Type: {list.type}</p>
-          </button>
+            <p>{list.activity}</p>
+          </div>
         );
       })}
     </div>
