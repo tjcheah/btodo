@@ -13,13 +13,30 @@ export default function Recommendation() {
   var recommends = Shuffle(filter);
 
   const mappingRecs = (
-    <div className="recommended">
+    <div>
       {recommends.slice(0, 5).map((list) => {
         return (
-          <button class="scale" id="box-button">
+          <div class="scale" id="box-button">
             <img src={logo} className="Logo" alt="logo" />
-            <p>Type: {list.type}</p>
-          </button>
+            <p>{list.activity}</p>
+            <div class="info">
+              <h2> Description</h2>
+              <ul>
+                <li>
+                  <strong>Height : </strong>5 Ft{" "}
+                </li>
+                <li>
+                  <strong>Shade : </strong>Olive green
+                </li>
+                <li>
+                  <strong>Decoration: </strong>balls and bells
+                </li>
+                <li>
+                  <strong>Material: </strong>Eco-Friendly
+                </li>
+              </ul>
+            </div>
+          </div>
         );
       })}
     </div>
@@ -27,7 +44,7 @@ export default function Recommendation() {
 
   return (
     <div id="bored-container">
-      <h1>Bored?</h1>
+      <h1>Recommended</h1>
       <div id="box-container">{mappingRecs}</div>
     </div>
   );
