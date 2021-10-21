@@ -1,6 +1,6 @@
 import data_array from "./obj.js";
 import React, { useState } from "react";
-function Recreational() {
+function Filter() {
   const [filtered, setFilter] = useState(
     data_array.filter((data) => data.type === "recreational")
   );
@@ -87,4 +87,4 @@ function Recreational() {
   );
 }
 
-export default Recreational;
+export default Filter;

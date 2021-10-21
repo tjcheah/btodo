@@ -5,6 +5,10 @@ const Images = {
   recreation: require("./recreation.png").default,
   social: require("./social-media.png").default,
   sport: require("./sports.png").default,
+  music: require("./music.png").default,
+  work: require("./hard-work.png").default,
+  diy: require("./toolbox.png").default,
+  relax: require("./meditation.png").default,
 };
 
 export default Images;

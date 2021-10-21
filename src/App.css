@@ -56,9 +56,9 @@
 #box-container {
   display: inline-flex;
   align-items: center;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   width: 100%;
-  height:fit-content;
+  height: fit-content;
 }
 
 #box-button {
